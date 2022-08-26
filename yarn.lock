@@ -197,6 +197,11 @@
   resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
+"@types/string-similarity@^4.0.0":
+  version "4.0.0"
+  resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/@types/string-similarity/-/string-similarity-4.0.0.tgz#8cc03d5d1baad2b74530fe6c7d849d5768d391ad"
+  integrity sha512-dMS4S07fbtY1AILG/RhuwmptmzK1Ql8scmAebOTJ/8iBtK/KI17NwGwKzu1uipjj8Kk+3mfPxum56kKZE93mzQ==
+
 "@typescript-eslint/parser@^5.21.0":
   version "5.34.0"
   resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/@typescript-eslint/parser/-/parser-5.34.0.tgz#ca710858ea85dbfd30c9b416a335dc49e82dbc07"
@@ -1406,6 +1411,11 @@ prelude-ls@^1.2.1:
   resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
+prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
 prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
@@ -1555,6 +1565,11 @@ source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
+string-similarity@^4.0.4:
+  version "4.0.4"
+  resolved "https://artifactory.lyft.net/artifactory/api/npm/virtual-npm-lyft/string-similarity/-/string-similarity-4.0.4.tgz#42d01ab0b34660ea8a018da8f56a3309bb8b2a5b"
+  integrity sha512-/q/8Q4Bl4ZKAPjj8WerIBJWALKkaPRfrvhfF8k/B23i4nzrlRj2/go1m90In7nG/3XDSbOo0+pu6RvCTM9RGMQ==
 
 string.prototype.matchall@^4.0.7:
   version "4.0.7"
