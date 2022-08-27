@@ -34,6 +34,9 @@ const Home: NextPage = () => {
 
   const [result, setResult] = useState<ResultType[] | null>(null);
 
+  const [includeMatchQualityInResult, setIncludeMatchQualityInResult] =
+    useState(true);
+
   const listAColumnOptions = useMemo(() => {
     return Object.keys(listA?.[0] || {}).filter((key) => !!key.trim());
   }, [listA]);
@@ -239,6 +242,7 @@ const Home: NextPage = () => {
                 <>
                   <input
                     type="checkbox"
+                    id={`listA-${columnOption}`}
                     checked={fieldsToIncludeFromA[columnOption]}
                     onChange={(e) => {
                       setFieldsToIncludeFromA({
@@ -247,7 +251,9 @@ const Home: NextPage = () => {
                       });
                     }}
                   />
-                  <label htmlFor="">{columnOption}</label>
+                  <label htmlFor={`listA-${columnOption}`}>
+                    {columnOption}
+                  </label>
                   <br />
                 </>
               ))}
@@ -258,6 +264,7 @@ const Home: NextPage = () => {
                 <>
                   <input
                     type="checkbox"
+                    id={`listB-${columnOption}`}
                     checked={fieldsToIncludeFromB[columnOption]}
                     onChange={(e) => {
                       setFieldsToIncludeFromB({
@@ -266,15 +273,24 @@ const Home: NextPage = () => {
                       });
                     }}
                   />
-                  <label htmlFor="">{columnOption}</label>
+                  <label htmlFor={`listB-${columnOption}`}>
+                    {columnOption}
+                  </label>
                   <br />
                 </>
               ))}
             </div>
           </div>
           <br />
-          <input type="checkbox" />
-          <label htmlFor="">Include match quality in result</label>
+          <input
+            type="checkbox"
+            id="includeMatchQualityInResult"
+            checked={includeMatchQualityInResult}
+            onChange={(e) => setIncludeMatchQualityInResult(e.target.checked)}
+          />
+          <label htmlFor="includeMatchQualityInResult">
+            Include match quality in result
+          </label>
           <br />
           <br />
           <br />
