@@ -114,6 +114,7 @@ const Home: NextPage = () => {
               }
 
               setFieldsToIncludeFromA(fieldsToInclude);
+              setResult(null);
             }}
           />
           <br />
@@ -122,7 +123,10 @@ const Home: NextPage = () => {
           <select
             name="listAColumnName"
             id="listAColumnName"
-            onChange={(e) => setListAColumnName(e.target.value)}
+            onChange={(e) => {
+              setListAColumnName(e.target.value);
+              setResult(null);
+            }}
             value={listAColumnName || undefined} // yikes
           >
             {listAColumnOptions.map((columnOption) => (
@@ -153,6 +157,7 @@ const Home: NextPage = () => {
               }
 
               setFieldsToIncludeFromB(fieldsToInclude);
+              setResult(null);
             }}
           />
           <br />
@@ -161,7 +166,10 @@ const Home: NextPage = () => {
           <select
             name="listBColumnName"
             id="listBColumnName"
-            onChange={(e) => setListBColumnName(e.target.value)}
+            onChange={(e) => {
+              setListBColumnName(e.target.value);
+              setResult(null);
+            }}
           >
             {listBColumnOptions.map((columnOption) => (
               <option key={columnOption} value={columnOption}>
