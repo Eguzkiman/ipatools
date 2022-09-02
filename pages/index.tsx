@@ -1,20 +1,19 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useMemo, useState } from "react";
-import { readCsvFile } from "./helpers/readCsvFile";
-import { normalize } from "./helpers/normalize";
+import { readCsvFile } from "helpers/readCsvFile";
+import { normalize } from "helpers/normalize";
 import { compareTwoStrings } from "string-similarity";
-
-interface Item {
-  [key: string]: string;
-}
+import { Item } from "types/Item";
+import { arrayToCsv } from "helpers/arrayToCsv";
+import { downloadStringAsFile } from "helpers/downloadStringAsFile";
 
 interface FieldsToInclude {
   [key: string]: boolean;
 }
 interface ResultType {
   fromListA: Item;
-  fromListB: Item | null;
+  fromListB: Item;
   matchQuality: number;
 }
 
@@ -83,7 +82,39 @@ const Home: NextPage = () => {
       });
     }
 
-    setResult(result);
+    setResult(result.sort((a, b) => b.matchQuality - a.matchQuality));
+  }
+
+  function downloadResult() {
+    if (!filteredResult || !fieldsToIncludeFromA || !fieldsToIncludeFromB)
+      return;
+
+    const csvList = filteredResult.map((resultItem) => {
+      const ret: Item = {};
+
+      // Add body from A
+      Object.keys(fieldsToIncludeFromA).forEach((key) => {
+        if (!key) return;
+        ret[key] = resultItem.fromListA[key];
+      });
+
+      // Add body from B
+      Object.keys(fieldsToIncludeFromB).forEach((key) => {
+        if (!key) return;
+        ret[key] = resultItem.fromListB?.[key];
+      });
+
+      ret.match_quality = `${resultItem.matchQuality}%`;
+
+      return ret;
+    });
+
+    const csv = arrayToCsv(csvList);
+
+    downloadStringAsFile("test.csv", csv);
+    // downloadStringAsFile("testa.csv", arrayToCsv(listA!));
+
+    // downloadStringAsFile("testbx.csv", arrayToCsv(listB!));
   }
 
   return (
@@ -294,7 +325,7 @@ const Home: NextPage = () => {
           <br />
           <br />
           <br />
-          <button>Download Result</button>
+          <button onClick={downloadResult}>Download Result</button>
         </>
       )}
     </>
